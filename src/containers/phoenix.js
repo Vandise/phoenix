@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, Text, View } from 'react-native';
+import { fetchTieredStories } from '../actions/storiesActions';
 
 class Phoenix extends Component {
+
+  componentWillMount() {
+    this.props.dispatch(fetchTieredStories());
+  }
+
   render() {
+    console.log(Object.keys(this.props.state.stories));
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>

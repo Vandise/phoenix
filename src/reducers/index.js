@@ -1,4 +1,4 @@
-import version from './versionReducer';
+import stories from './storiesReducer';
 export default {
-  version,
+  stories,
 };
