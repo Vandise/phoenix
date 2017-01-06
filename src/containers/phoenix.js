@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class Phoenix extends Component {
+class Phoenix extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -19,6 +20,18 @@ export default class Phoenix extends Component {
     );
   }
 }
+
+Phoenix.propTypes = {
+  dispatch: React.PropTypes.func,
+};
+
+const mapStateToProps = (state) => {
+  return {
+    state
+  };
+};
+
+export default connect(mapStateToProps)(Phoenix);
 
 const styles = StyleSheet.create({
   container: {
